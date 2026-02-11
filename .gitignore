@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+.idea/
+.vscode/
+*.swp
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+.DS_Store
+
+# AI working docs (not for repo)
+CLAUDE.md
+PLAN.md
+.claude/
