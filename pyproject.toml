@@ -1,0 +1,36 @@
+[project]
+name = "realtime-notification-event-bus"
+version = "0.1.0"
+description = "Real-time notification backend with event-driven architecture"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115",
+    "uvicorn>=0.34",
+    "sqlalchemy[asyncio]>=2.0",
+    "asyncpg>=0.30",
+    "alembic>=1.14",
+    "aio-pika>=9.5",
+    "redis>=5.0",
+    "pydantic-settings>=2.0",
+    "python-dotenv>=1.0",
+    "httpx>=0.28",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "testcontainers>=4.0",
+    "fakeredis>=2.26",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
